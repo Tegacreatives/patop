@@ -8,8 +8,12 @@ import {
 import React from "react";
 import DonationCardInfo from "../components/DonationCardInfo";
 import { theme } from "../theme";
+import IconBadge from "../components/IconBadge";
 
 const DonationScreen = ({ route, navigation }: any) => {
+  const goBack = () => {
+    navigation.goBack();
+  };
   const { item } = route.params;
   //   console.log(item);
   return (
@@ -20,6 +24,26 @@ const DonationScreen = ({ route, navigation }: any) => {
           uri: item.donationImage,
         }}
       />
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+        style={{
+          position: "absolute",
+          top: 55,
+          left: 20,
+        }}
+      >
+        <IconBadge iconName="arrow-back-sharp" onPressFunction={goBack} />
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => navigation.goBack()}
+        style={{
+          position: "absolute",
+          top: 55,
+          right: 20,
+        }}
+      >
+        <IconBadge iconName="bookmark-outline" onPressFunction={goBack} />
+      </TouchableOpacity>
       <DonationCardInfo item={item} />
       <TouchableOpacity
         activeOpacity={0.9}

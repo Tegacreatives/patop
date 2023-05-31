@@ -16,7 +16,18 @@ const DonationImage = ({ image }: { image: string }) => {
           uri: image,
         }}
       />
-      <IconBadge />
+      <View
+        style={{
+          position: "absolute",
+          top: 20,
+          right: 20,
+        }}
+      >
+        <IconBadge
+          iconName="bookmark-outline"
+          onPressFunction={() => console.log("bookmark")}
+        />
+      </View>
     </View>
   );
 };

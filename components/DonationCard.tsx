@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableWithoutFeedback } from "react-native";
+import { View, TouchableWithoutFeedback } from "react-native";
 import React from "react";
 import { theme } from "../theme";
 import { donationType } from "../types/donationTypes";
@@ -18,7 +18,7 @@ const DonationCard = ({
     >
       <View
         style={{
-          marginHorizontal: 20,
+          marginHorizontal: 10,
           width: 350,
           height: 340,
           backgroundColor: theme["color-gray"],
