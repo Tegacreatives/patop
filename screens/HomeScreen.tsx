@@ -1,16 +1,26 @@
-import { StyleSheet, SafeAreaView, View, ScrollView } from "react-native";
-import React from "react";
+import { StyleSheet, View, ScrollView } from "react-native";
+import React, { useLayoutEffect } from "react";
+import { useNavigation } from "@react-navigation/native";
+
 import { theme } from "../theme";
+
 import Header from "../components/Header";
 import Categories from "../components/Categories";
-import DonationTitle from "../components/DonationTitle";
 import Donations from "../components/Donations";
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }: any) => {
+  const Navigation = useNavigation();
+
+  useLayoutEffect(() => {
+    Navigation.setOptions({
+      headerShown: false,
+    });
+  }, []);
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Header />
-      <View
+      <ScrollView
+        showsVerticalScrollIndicator={false}
         style={{
           backgroundColor: "white",
           display: "flex",
@@ -18,17 +28,19 @@ const HomeScreen = () => {
         }}
       >
         <Categories />
-        <DonationTitle />
-        <Donations />
-      </View>
-    </SafeAreaView>
+        <Donations navigation={navigation} />
+        <View style={{ height: 50 }}></View>
+      </ScrollView>
+    </View>
   );
 };
 
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    flex: 1,
+  },
   text: {
     color: theme["color-primary-500"],
   },

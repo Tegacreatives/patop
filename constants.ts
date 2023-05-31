@@ -4,7 +4,7 @@ export const LISTMARGIN = 10;
 export const WIDTH = Dimensions.get("screen").width - LISTMARGIN * 2;
 
 const baseHeight = 20;
-const iosNotch = 40;
+const iosNotch = 50;
 const iosHeight = baseHeight + iosNotch;
 let androidHeight = baseHeight;
 let androidNotch = 0;

@@ -1,6 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
+
 import { theme } from "../theme";
 import { donationType } from "../types/donationTypes";
 
@@ -32,14 +33,25 @@ const DonationCardInfo = ({ item }: { item: donationType }) => {
       </View>
       <View style={{ display: "flex", flexDirection: "row" }}>
         <View
-          style={{ display: "flex", flexDirection: "row", marginRight: 25 }}
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            marginRight: 25,
+          }}
         >
           <Ionicons name="people-outline" size={20} />
-          <Text>250 patrons</Text>
+          <Text>{item.patrons} patrons</Text>
         </View>
-        <View style={{ display: "flex", flexDirection: "row" }}>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
           <Ionicons name="time-outline" size={20} />
-          <Text>10 days left</Text>
+          <Text>{item.RemainingDays} days left</Text>
         </View>
       </View>
     </View>

@@ -1,10 +1,10 @@
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
 import { categoriesData } from "../data/categories";
 import { theme } from "../theme";
 
 const Category = ({ name, icon }: { name: string; icon: string | any }) => (
-  <View
+  <TouchableOpacity
     style={{
       marginTop: 8,
       paddingLeft: 20,
@@ -12,17 +12,17 @@ const Category = ({ name, icon }: { name: string; icon: string | any }) => (
   >
     <Text
       style={{
-        paddingVertical: 12,
+        paddingVertical: 13,
         paddingHorizontal: 15,
         borderRadius: 10,
-        marginRight: 5,
+        overflow: "hidden",
         backgroundColor: theme["color-primary-400"],
         color: "white",
       }}
     >
       {name} {icon}
     </Text>
-  </View>
+  </TouchableOpacity>
 );
 
 const Categories = () => {

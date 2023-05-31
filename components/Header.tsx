@@ -14,7 +14,7 @@ const Header = () => {
         flexDirection: "column",
         backgroundColor: theme["color-primary-100"],
         paddingVertical: 45,
-        paddingTop: HEADERHEIGHT + 20,
+        paddingTop: HEADERHEIGHT + 15,
         paddingHorizontal: 20,
       }}
     >

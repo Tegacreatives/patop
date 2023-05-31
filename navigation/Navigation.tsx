@@ -1,32 +1,25 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import HomeScreen from "../screens/HomeScreen";
+import DonationScreen from "../screens/DonationScreen";
 
-const Tab = createBottomTabNavigator();
+import { HomeRoute } from "./CustomNavigation";
+
+const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator
+      <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
-          tabBarActiveTintColor: "#e91e63",
-          tabBarHideOnKeyboard: true,
+          headerShown: false,
         }}
       >
-        <Tab.Screen
-          component={HomeScreen}
-          name="Home"
-          options={{
-            headerShown: false,
-            tabBarShowLabel: false,
-            tabBarIcon: () => <MaterialCommunityIcons name="home" size={30} />,
-          }}
-        />
-      </Tab.Navigator>
+        <Stack.Screen component={HomeRoute} name="Home Screen" />
+        <Stack.Screen component={DonationScreen} name="Donation" />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };

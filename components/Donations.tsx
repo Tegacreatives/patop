@@ -1,19 +1,27 @@
-import { FlatList } from "react-native";
-import React from "react";
+import { View, FlatList } from "react-native";
+import React, { memo } from "react";
 
 import { donationData } from "../data/donations";
 import DonationCard from "./DonationCard";
+import SectionTitle from "./SectionTitle";
 
-const Donations = () => {
+const Donations = ({ navigation }: any) => {
+  const moveToScreen = () => navigation.navigate("List");
   return (
-    <FlatList
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      data={donationData}
-      renderItem={({ item }) => <DonationCard item={item} />}
-      keyExtractor={(item) => item.id}
-    />
+    <View>
+      <SectionTitle moveToScreen={moveToScreen} />
+      <FlatList
+        horizontal
+        initialNumToRender={4}
+        showsHorizontalScrollIndicator={false}
+        data={donationData}
+        renderItem={({ item }) => (
+          <DonationCard item={item} navigation={navigation} />
+        )}
+        keyExtractor={(item) => item.id}
+      />
+    </View>
   );
 };
 
-export default Donations;
+export default memo(Donations);

@@ -1,14 +1,21 @@
 import { View, Text, Image, TouchableWithoutFeedback } from "react-native";
 import React from "react";
-import { Ionicons } from "@expo/vector-icons";
 import { theme } from "../theme";
 import { donationType } from "../types/donationTypes";
 import DonationImage from "./DonationImage";
 import DonationCardInfo from "./DonationCardInfo";
 
-const DonationCard = ({ item }: { item: donationType }) => {
+const DonationCard = ({
+  item,
+  navigation,
+}: {
+  item: donationType;
+  navigation: any;
+}) => {
   return (
-    <TouchableWithoutFeedback onPress={() => console.log("pressed")}>
+    <TouchableWithoutFeedback
+      onPress={() => navigation.navigate("Donation", { item: item })}
+    >
       <View
         style={{
           marginHorizontal: 20,
