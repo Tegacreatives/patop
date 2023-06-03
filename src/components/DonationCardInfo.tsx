@@ -2,8 +2,8 @@ import { View, Text } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 
-import { theme } from "../theme";
-import { donationType } from "../types/donationTypes";
+import { theme } from "../../theme";
+import { donationType } from "../../types/donationTypes";
 
 const DonationCardInfo = ({ item }: { item: donationType }) => {
   return (

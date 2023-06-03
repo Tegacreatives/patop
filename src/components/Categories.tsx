@@ -1,7 +1,7 @@
 import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import React from "react";
-import { categoriesData } from "../data/categories";
-import { theme } from "../theme";
+import { categoriesData } from "../../data/categories";
+import { theme } from "../../theme";
 
 const Category = ({ name, icon }: { name: string; icon: string | any }) => (
   <TouchableOpacity

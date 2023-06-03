@@ -3,8 +3,8 @@ import { Ionicons } from "@expo/vector-icons";
 import { Avatar } from "@ui-kitten/components";
 import React from "react";
 
-import { theme } from "../theme";
-import { HEADERHEIGHT } from "../constants";
+import { theme } from "../../theme";
+import { HEADERHEIGHT } from "../../constants";
 
 const Header = () => {
   return (

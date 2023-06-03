@@ -1,7 +1,6 @@
 import { View, FlatList } from "react-native";
-import React, { memo } from "react";
 
-import { donationData } from "../data/donations";
+import { donationData } from "../../data/donations";
 import DonationCard from "./DonationCard";
 import SectionTitle from "./SectionTitle";
 
@@ -11,6 +10,9 @@ const Donations = ({ navigation }: any) => {
     <View>
       <SectionTitle moveToScreen={moveToScreen} />
       <FlatList
+        style={{
+          paddingLeft: 6,
+        }}
         horizontal
         initialNumToRender={4}
         showsHorizontalScrollIndicator={false}
@@ -24,4 +26,4 @@ const Donations = ({ navigation }: any) => {
   );
 };
 
-export default memo(Donations);
+export default Donations;

@@ -2,7 +2,7 @@ import { StyleSheet, View, ScrollView } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 
-import { theme } from "../theme";
+import { theme } from "../../theme";
 
 import Header from "../components/Header";
 import Categories from "../components/Categories";

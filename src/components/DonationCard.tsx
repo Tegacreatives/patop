@@ -1,7 +1,7 @@
 import { View, TouchableWithoutFeedback } from "react-native";
-import React from "react";
-import { theme } from "../theme";
-import { donationType } from "../types/donationTypes";
+import React, { memo } from "react";
+import { theme } from "../../theme";
+import { donationType } from "../../types/donationTypes";
 import DonationImage from "./DonationImage";
 import DonationCardInfo from "./DonationCardInfo";
 
@@ -32,4 +32,4 @@ const DonationCard = ({
   );
 };
 
-export default DonationCard;
+export default memo(DonationCard);

@@ -1,13 +1,7 @@
-import {
-  View,
-  SafeAreaView,
-  Text,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import DonationCardInfo from "../components/DonationCardInfo";
-import { theme } from "../theme";
+import { theme } from "../../theme";
 import IconBadge from "../components/IconBadge";
 
 const DonationScreen = ({ route, navigation }: any) => {
@@ -15,7 +9,7 @@ const DonationScreen = ({ route, navigation }: any) => {
     navigation.goBack();
   };
   const { item } = route.params;
-  //   console.log(item);
+
   return (
     <View style={{}}>
       <Image
